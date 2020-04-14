@@ -1,13 +1,17 @@
-from flask import Flask, render_template
+import config
+from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, Blueprint
 
 app = Flask(__name__)
+app.config.from_object(config)
+
+db = SQLAlchemy(app)
+db.create_all()
 
 
 @app.route('/')
-@app.route('/index')
-def hello_world():
-    user = {'username': 'wdf'}
-    return render_template('index.html', title='Home', user=user)
+def hello():
+    return 'hello'
 
 
 if __name__ == '__main__':

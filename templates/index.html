@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if title %}
-    <title>{{title}}-microblog</title>
-    {% else %}
-    <title>welcome microblog</title>
-    {% endif %}
+    <title>title</title>
+    <link href="../static/text.css"  rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>welcome, {{ user.username }}</h1>
+    <div class="div1">
+        <form action="login" method="post">
+            <input type="text" class="input" placeholder="输入用户名">
+            <input type="password" class="input" placeholder="输入密码">
+            <input type="submit" class="button" value="登录">
+        </form>
+    </div>
 </body>
 </html>
